@@ -32,6 +32,6 @@ some commands to try:
 \l
 \dt
 \d wave_forecast
-select id, ST_AsText(geom) AS geometry_text FROM wave_forecast LIMIT 5;
+select id, wave_height, ST_AsText(geom) AS geometry_text FROM wave_forecast LIMIT 5;
 ```
     
