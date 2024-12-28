@@ -1,4 +1,5 @@
-CREATE DATABASE wave_forecast;
+CREATE USER evan WITH PASSWORD 'psql_pw';
+CREATE DATABASE wave_forecast OWNER evan;
 \c wave_forecast
 CREATE EXTENSION postgis;
 

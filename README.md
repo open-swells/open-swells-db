@@ -1,3 +1,7 @@
+## arch linux
+
+#### sqlite3
+
 To rebuild db: 
 ```bash
 sqlite3 main.db < schema.sql
@@ -10,6 +14,7 @@ SELECT InitSpatialMetadata(1);
 SELECT id, datetime, wave_height, wave_period, wave_direction, AsText(geom) AS geom_text FROM wave_forecast;
 ```
 
+#### postgres
 
 To access postgres db command line
 ```
@@ -34,4 +39,12 @@ some commands to try:
 \d wave_forecast
 select id, wave_height, ST_AsText(geom) AS geometry_text FROM wave_forecast LIMIT 5;
 ```
-    
+
+## void linux 
+
+#### postgres
+init: sudo -u postgres initdb -D /var/lib/postgresql/data
+start: sudo -u postgres /usr/lib/psql16/bin/pg_ctl -D /var/lib/postgresql/data start
+stop: ^ 
+access: sudo -u postgres psql
+create db schema: sudo -u postgres psql -f setup_wave_forecast.sql
